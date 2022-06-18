@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+.ChampionSelector {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 20px;
+  background-color: #202020;
+
+  li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 9px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    line-height: 12px;
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid #C17A0E;
+  }
+  span {
+    padding-top: 5px;
+  }
+}

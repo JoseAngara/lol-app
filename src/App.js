@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles.scss';
+
+import championInfo from './lol-info/12.11.1/data/es_MX/champion';
+import ChampionSelector from './components/ChampionSelector'
+
+function importAllImages(r) {
+  let images = {};
+  r.keys().forEach((item, index) => {
+    images[item.replace('./', '')] = r(item);
+  });
+  return images;
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  let championImages = importAllImages(require.context('./lol-info/img/champion/tiles/70px', false, /\.(png|jpe?g|svg)$/));
+  return ( < ChampionSelector className="ChampionSelector" champions = {
+    championInfo.data
+  } championImages = {
+    championImages
+  } />
   );
 }
 
