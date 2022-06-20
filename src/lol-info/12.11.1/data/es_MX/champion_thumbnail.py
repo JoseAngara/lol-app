@@ -10,6 +10,7 @@ for champion in champions:
     new_json[champion] = {}
     new_json[champion]["name"] = champions[champion]["name"]
     new_json[champion]["image"] = champion + "_0.jpg"
+    new_json[champion]["key"] = champions[champion]["key"]
 
 with open("champion_thumbnail.json", "w") as outfile:
     json.dump(new_json, outfile)
