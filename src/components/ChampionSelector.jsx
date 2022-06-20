@@ -12,17 +12,18 @@ export default function ChampionSelector({ search }) {
   let champions = [];
   for (let champion of Object.keys(ChampionThumbnails)) champions.push(ChampionThumbnails[champion]);
 
-  let filteredChampions = champions.filter(champion => champion.name.toLowerCase().includes(search.toLowerCase()));
+  let filteredChampions = search ? champions.filter(champion => champion.name.toLowerCase().includes(search.toLowerCase())) : champions;
 
   let championImages = importAllImages(
     require.context('../lol-info/img/champion/tiles/140px', false, /\.(png|jpe?g|svg)$/)
   );
+  console.log(filteredChampions)
 
   return (
     <div className="ChampionSelector">
       <div className="container">
         <ul>
-          {filteredChampions.map(({ name, image }) => <ChampionTile name={name} image={championImages[image]} />)}
+          {filteredChampions.map(({ name, image, key }) => <ChampionTile key={`${key}`} name={name} image={championImages[image]} />)}
         </ul>
       </div>
     </div>
@@ -33,7 +34,7 @@ const ChampionTile = ({ name, image }) => {
   return (
     <li>
       <img src={image} alt={name} srcSet="" />
-      <span>{name.toUpperCase()}</span>{" "}
+      <span>{name.toUpperCase()}</span>
     </li>
   );
 };
