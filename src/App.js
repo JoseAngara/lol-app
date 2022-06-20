@@ -1,23 +1,23 @@
-import './styles.scss';
-
-import championInfo from './lol-info/12.11.1/data/es_MX/champion';
-import ChampionSelector from './components/ChampionSelector'
-
-function importAllImages(r) {
-  let images = {};
-  r.keys().forEach((item, index) => {
-    images[item.replace('./', '')] = r(item);
-  });
-  return images;
-}
+import { useState } from 'react';
+import "./styles.scss";
+import ChampionSelector from "./components/ChampionSelector";
+import StatsGraph from "./components/StatsGraph"
 
 function App() {
-  let championImages = importAllImages(require.context('./lol-info/img/champion/tiles/70px', false, /\.(png|jpe?g|svg)$/));
-  return ( < ChampionSelector className="ChampionSelector" champions = {
-    championInfo.data
-  } championImages = {
-    championImages
-  } />
+  let [search, setSearch] = useState("");
+  let [champions, setChampions] = useState([]);
+
+  const handleClick = (event) => {
+    setChampions([...champions, event.target.key])
+  }
+
+  return (
+    <div>
+      <input type="text" value={search} onChange={(event) => setSearch(event.target.value)} />
+      <ChampionSelector search={search} />
+      <StatsGraph searchedChampions={champions} stat="effectivehparmor" />
+      <StatsGraph searchedChampions={champions} stat="attackdamage" />
+    </div>
   );
 }
 
