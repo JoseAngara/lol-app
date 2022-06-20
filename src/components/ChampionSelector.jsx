@@ -17,7 +17,6 @@ export default function ChampionSelector({ search }) {
   let championImages = importAllImages(
     require.context('../lol-info/img/champion/tiles/140px', false, /\.(png|jpe?g|svg)$/)
   );
-  console.log(filteredChampions)
 
   return (
     <div className="ChampionSelector">

@@ -1,6 +1,6 @@
 import json
 
-with open("champion.json", "r", encoding="utf8") as championFile:
+with open("src/lol-info/12.11.1/data/es_MX/champion.json", "r", encoding="utf8") as championFile:
     data = json.load(championFile)
 
 champions= data["data"]
@@ -12,5 +12,5 @@ for champion in champions:
     new_json[champion]["image"] = champion + "_0.jpg"
     new_json[champion]["key"] = champions[champion]["key"]
 
-with open("champion_thumbnail.json", "w") as outfile:
+with open("src/lol-info/12.11.1/data/es_MX/champion_thumbnails.json", "w") as outfile:
     json.dump(new_json, outfile)
