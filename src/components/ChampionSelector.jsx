@@ -1,4 +1,4 @@
-import ChampionThumbnails from '../lol-info/12.11.1/data/es_MX/champion_thumbnails.json';
+import ChampionThumbnails from '../lol-info/12.11.1/data/champion_thumbnails.json';
 
 function importAllImages(r) {
   let images = {};
@@ -9,10 +9,7 @@ function importAllImages(r) {
 }
 
 export default function ChampionSelector({ search }) {
-  let champions = [];
-  for (let champion of Object.keys(ChampionThumbnails)) champions.push(ChampionThumbnails[champion]);
-
-  let filteredChampions = search ? champions.filter(champion => champion.name.toLowerCase().includes(search.toLowerCase())) : champions;
+  let champions = ChampionThumbnails.filter(champion => champion.name.toLowerCase().includes(search.toLowerCase()))
 
   let championImages = importAllImages(
     require.context('../lol-info/img/champion/tiles/140px', false, /\.(png|jpe?g|svg)$/)
@@ -22,14 +19,14 @@ export default function ChampionSelector({ search }) {
     <div className="ChampionSelector">
       <div className="container">
         <ul>
-          {filteredChampions.map(({ name, image, key }) => <ChampionTile key={`${key}`} name={name} image={championImages[image]} />)}
+          {champions.map(({ name, image, key }) => <ChampionTile key={`${key}`} name={name} image={championImages[image]} />)}
         </ul>
       </div>
     </div>
   );
 }
 
-const ChampionTile = ({ name, image }) => {
+const ChampionTile = ({ name, image, onClick }) => {
   return (
     <li>
       <img src={image} alt={name} srcSet="" />
