@@ -7,10 +7,6 @@ function App() {
   let [search, setSearch] = useState("");
   let [champions, setChampions] = useState(["Wukong", "Darius", "Mordekaiser", "Maestro Yi", "Kha'Zix", "Miss Fortune", "Vayne", "Ashe"]);
 
-  const handleClick = (event) => {
-    setChampions([...champions, event.target.key])
-  }
-
   return (
     <div>
       <input type="text" value={search} onChange={(event) => setSearch(event.target.value)} />
