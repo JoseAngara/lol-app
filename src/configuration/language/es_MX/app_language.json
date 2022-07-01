@@ -1,0 +1,31 @@
+{
+    "championTab": {
+        "championSearchBar": {
+            "header": "Campeones",
+            "placeholder": "Buscar",
+            "filter": "Filtro",
+            "filteroptions": {
+                "all": "Todos",
+                "free": "Gratis",
+                "favorites": "Favoritos",
+                "lane": "Línea",
+                "laneoptions": {
+                    "top": "Top",
+                    "jungle": "Jungla",
+                    "mid": "Mid",
+                    "bottom": "Bot",
+                    "support": "Soporte"
+                },
+                "role": "Rol",
+                "roleoptions": {
+                    "fighter": "Peleador",
+                    "support": "Soporte",
+                    "mage": "Mago",
+                    "assassin": "Asesino",
+                    "tank": "Tanque",
+                    "marksman": "Tirador"
+                }
+            }
+        }
+    }
+}

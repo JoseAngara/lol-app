@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Health",
+    "value": "hp",
+    "description": "La cantidad de puntos de golpe que un campeón tiene, si llega a 0 el campeón muere"
+  },
+  {
+    "name": "Mana",
+    "value": "mp",
+    "description": "Es el recurso necesario para lanzar habilidades"
+  },
+  {
+    "name": "Armor",
+    "value": "armor",
+    "description": "La armadura es la estadística que reduce el daño físico recibido"
+  },
+  {
+    "name": "SpellBlock",
+    "value": "spellblock",
+    "description": "La resistencia mágica es la estadística que reduce el daño mágico recibido"
+  },
+  {
+    "name": "HealthRegen",
+    "value": "hpregen",
+    "description": "Es la cantidad de vida que un campéon regenera cada cinco segundos"
+  },
+  {
+    "name": "ManaRegen",
+    "value": "mpregen",
+    "description": "Es la cantidad de puntos de maná que un campeón regenera cada cinco segundos"
+  },
+  {
+    "name": "Attack",
+    "value": "attackdamage",
+    "description": "El ataque determina la cantidad de daño físico que realizan los ataques básicos"
+  },
+  {
+    "name": "AttackSpeed",
+    "value": "attackspeed",
+    "description": "Es la cantidad de ataques básicos que se pueden realizar cada segundo"
+  },
+  {
+    "name": "Movement",
+    "value": "movespeed",
+    "description": "Es la velocidad a la que se desplaza un campeón por el mapa"
+  }
+]
